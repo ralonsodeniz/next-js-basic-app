@@ -4,6 +4,8 @@
 
 Basic app to add meetups as playground to test [Next.js](https://nextjs.org)
 
+You can visit the app [here](https://next-js-basic-app-orcin.vercel.app/).
+
 ## Technologies used
 
 ### Front-End
