@@ -1,0 +1,9 @@
+import styled from "styled-components";
+
+export const Detail = styled.section`
+  text-align: center;
+`
+
+export const Image = styled.img`
+  width: 100%;
+`

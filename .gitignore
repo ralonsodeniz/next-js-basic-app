@@ -1,0 +1,13 @@
+/.idea
+/node_modules
+/test-coverage
+/coverage
+/dist
+/lib
+/storybook-static
+/webpack-stats.json
+/stats.json
+.DS_Store
+.vscode
+/.next/
+/.env.local
