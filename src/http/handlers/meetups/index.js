@@ -12,7 +12,7 @@ export const getMeetups = async () => {
     await client.close();
     return parsedMeetups;
   } catch (error) {
-    return error;
+    return [];
   }
 };
 
@@ -26,7 +26,7 @@ export const getMeetupsIds = async () => {
     await client.close();
     return parsedMeetupsIds;
   } catch (error) {
-    return error;
+    return [];
   }
 };
 
@@ -40,6 +40,6 @@ export const getMeetup = async (meetupId) => {
     await client.close();
     return parsedMeetup;
   } catch (error) {
-    return error;
+    return null;
   }
 };
