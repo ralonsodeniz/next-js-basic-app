@@ -8,6 +8,7 @@ const HomePage = ({ meetups }) => (
       <title>Meetups</title>
       <meta name="description" content="Browse meetups in your town" />
     </Head>
+      tete
     <MeetUpList meetups={meetups} />
   </>
 );
