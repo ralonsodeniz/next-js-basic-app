@@ -1,11 +1,21 @@
-import axios from "axios";
+import axios from 'axios';
+import useSWR from 'swr';
 
-const config = {
-    baseURL: '/api'
-}
+const axiosConfig = {
+  baseURL: '/api',
+};
 
-const instance = axios.create(config);
+const instance = axios.create(axiosConfig);
 
-export const getJson = instance.get;
+const axiosGet = async (url, options) => {
+  const { data } = await instance.get(url, options);
+  return data;
+};
+
+export const swrConfig = {
+  fetcher: axiosGet,
+};
+
+export const getJson = (key, options) => useSWR(key, options);
 
 export const postJson = instance.post;

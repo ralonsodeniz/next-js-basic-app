@@ -1,24 +1,39 @@
+// import { useEffect } from 'react';
 import Head from 'next/head';
 import MeetUpList from '../components/MeetUpList';
 import { getMeetups } from '../http/handlers/meetups';
+import { getJson } from '../http';
+// import { useRenderContext } from '../contexts/RenderContext';
 
-const HomePage = ({ meetups }) => (
-  <>
-    <Head>
-      <title>Meetups</title>
-      <meta name="description" content="Browse meetups in your town" />
-    </Head>
-    <MeetUpList meetups={meetups} />
-  </>
-);
+const HomePage = ({ initialMeetups }) => {
+  const { data: meetups, mutate } = getJson('/meetups', {
+    initialData: initialMeetups,
+    revalidateOnMount: true,
+  });
+  // const isFirstRender = useRenderContext();
+  //
+  // useEffect(() => {
+  //   if (!isFirstRender) mutate();
+  // }, []);
+
+  return (
+    <>
+      <Head>
+        <title>Meetups</title>
+        <meta name="description" content="Browse meetups in your town" />
+      </Head>
+      <MeetUpList meetups={meetups} />
+    </>
+  );
+};
 
 export const getStaticProps = async () => {
-  const meetups = await getMeetups();
+  const initialMeetups = await getMeetups();
 
-  return meetups
+  return initialMeetups
     ? {
         props: {
-          meetups,
+          initialMeetups,
         },
         revalidate: 60,
       }
