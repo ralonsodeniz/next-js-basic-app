@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb';
 import { getMongoClient } from '../../../database';
-import { parseMeetup } from './helpers';
+import { parseMeetups, parseMeetup } from './helpers';
 
 export const getMeetups = async () => {
   try {
@@ -8,7 +8,7 @@ export const getMeetups = async () => {
     const db = client.db();
     const meetupsCollection = db.collection('meetups');
     const meetups = await meetupsCollection.find().toArray();
-    const parsedMeetups = meetups.map((meetup) => parseMeetup(meetup));
+    const parsedMeetups = await parseMeetups(meetups);
     await client.close();
     return parsedMeetups;
   } catch (error) {

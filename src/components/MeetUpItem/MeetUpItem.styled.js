@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import {styled as muiStyled} from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+import Image from 'next/image';
+import { styled as muiStyled } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 export const Item = styled.li`
   margin: 1rem 0;
@@ -14,7 +15,7 @@ export const ImageContainer = styled.div`
   border-top-left-radius: 6px;
 `;
 
-export const Image = styled.img`
+export const StyledImage = styled(Image)`
   width: 100%;
   object-fit: cover;
 `;
@@ -35,16 +36,16 @@ export const ActionsContainer = styled.div`
 `;
 
 export const StyledButton = muiStyled(Button)({
-    font: 'inherit',
-    cursor: 'pointer',
-    color: '#77002e',
-    border: '1px solid #77002e',
-    backgroundColor: 'transparent',
-    padding: '0.5rem 1.5rem',
-    borderRadius: '4px',
-    textTransform: 'none',
+  font: 'inherit',
+  cursor: 'pointer',
+  color: '#77002e',
+  border: '1px solid #77002e',
+  backgroundColor: 'transparent',
+  padding: '0.5rem 1.5rem',
+  borderRadius: '4px',
+  textTransform: 'none',
 
-    '&:hover, &:active': {
-        backgroundColor: '#ffe2ed',
-    }
+  '&:hover, &:active': {
+    backgroundColor: '#ffe2ed',
+  },
 });

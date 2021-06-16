@@ -4,14 +4,14 @@ import {
   ActionsContainer,
   StyledButton,
   Content,
-  Image,
+  StyledImage,
   ImageContainer,
   Item,
   Title,
 } from './MeetUpItem.styled';
 import Card from '../ui/Card';
 
-const MeetUpItem = ({ image, title, address, id }) => {
+const MeetUpItem = ({ title, address, id, ...imageProps }) => {
   const { push } = useRouter();
   const handleNavigate = () => push(`/${id}`);
 
@@ -19,7 +19,7 @@ const MeetUpItem = ({ image, title, address, id }) => {
     <Item>
       <Card>
         <ImageContainer>
-          <Image src={image} alt={title} />
+          <StyledImage alt={title} {...imageProps} placeholder="blur" />
         </ImageContainer>
         <Content>
           <Title>{title}</Title>
