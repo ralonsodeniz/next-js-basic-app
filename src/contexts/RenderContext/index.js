@@ -10,7 +10,9 @@ const RenderProvider = ({ children }) => {
   }, []);
 
   return (
-    <RenderContext.Provider value={isFirstRender.current} children={children} />
+    <RenderContext.Provider value={isFirstRender.current}>
+      {children}
+    </RenderContext.Provider>
   );
 };
 

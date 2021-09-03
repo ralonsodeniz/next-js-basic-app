@@ -1,5 +1,8 @@
+import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import Card from '@Components/ui/Card';
+import { literals } from '@Enums/literals';
 import {
   ActionsContainer,
   StyledButton,
@@ -9,11 +12,10 @@ import {
   Item,
   Title,
 } from './MeetUpItem.styled';
-import Card from '../ui/Card';
 
 const MeetUpItem = ({ title, address, id, ...imageProps }) => {
   const { push } = useRouter();
-  const handleNavigate = () => push(`/${id}`);
+  const handleNavigate = useCallback(() => push(`/${id}`), [id]);
 
   return (
     <Item>
@@ -26,7 +28,9 @@ const MeetUpItem = ({ title, address, id, ...imageProps }) => {
           <address>{address}</address>
         </Content>
         <ActionsContainer>
-          <StyledButton onClick={handleNavigate}>Show Details</StyledButton>
+          <StyledButton onClick={handleNavigate}>
+            {literals.meetupItem.DETAILS}
+          </StyledButton>
         </ActionsContainer>
       </Card>
     </Item>

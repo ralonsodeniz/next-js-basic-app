@@ -1,4 +1,4 @@
-import { getMongoClient } from '../../../database';
+import { getMongoClient } from '@Database/index';
 
 const handler = async (req, res) => {
   const { method, body } = req;

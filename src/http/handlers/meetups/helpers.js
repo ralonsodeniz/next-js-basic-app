@@ -17,8 +17,7 @@ export const parseMeetup = async (meetup) => {
   };
 };
 
-export const parseMeetups = async (meetups) =>
-  await meetups.reduce(async (accumulator, meetup) => {
-    const parsedMeetup = await parseMeetup(meetup);
-    return [...(await accumulator), parsedMeetup];
-  }, []);
+export const parseMeetups = (meetups) => {
+  const meetupPromises = meetups.map((meetup) => parseMeetup(meetup));
+  return Promise.all(meetupPromises);
+};

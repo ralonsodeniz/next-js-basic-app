@@ -1,4 +1,4 @@
-import { getMeetups } from '../../../http/handlers/meetups';
+import { getMeetups } from '@Http/handlers/meetups';
 
 const handler = async (req, res) => {
   const { method } = req;

@@ -1,5 +1,5 @@
-import MeetUpDetail from '../../components/MeetUpDetail';
-import { getMeetup, getMeetupsIds } from '../../http/handlers/meetups';
+import MeetUpDetail from '@Components/MeetUpDetail';
+import { getMeetup, getMeetupsIds } from '@Http/handlers/meetups';
 import Head from 'next/head';
 
 const MeetUpDetailPage = ({ meetup }) => {

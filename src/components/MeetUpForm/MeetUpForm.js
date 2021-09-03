@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Card from '../ui/Card';
+import Card from '@Components/ui/Card';
+import { literals } from '@Enums/literals';
 import {
   ActionsContainer,
   StyledButton,
@@ -34,7 +35,7 @@ const MeetUpForm = ({ onAddMeetUp }) => {
     <Card>
       <Form onSubmit={submitHandler}>
         <FormItem>
-          <Label htmlFor="title">Meetup Title</Label>
+          <Label htmlFor="title">{literals.newMeetup.TITLE}</Label>
           <Input
             type="text"
             required
@@ -44,7 +45,7 @@ const MeetUpForm = ({ onAddMeetUp }) => {
           />
         </FormItem>
         <FormItem>
-          <Label htmlFor="image">Meetup Image</Label>
+          <Label htmlFor="image">{literals.newMeetup.IMAGE}</Label>
           <Input
             type="url"
             required
@@ -54,7 +55,7 @@ const MeetUpForm = ({ onAddMeetUp }) => {
           />
         </FormItem>
         <FormItem>
-          <Label htmlFor="address">Address</Label>
+          <Label htmlFor="address">{literals.newMeetup.ADDRESS}</Label>
           <Input
             type="text"
             required
@@ -64,7 +65,7 @@ const MeetUpForm = ({ onAddMeetUp }) => {
           />
         </FormItem>
         <FormItem>
-          <Label htmlFor="description">Description</Label>
+          <Label htmlFor="description">{literals.newMeetup.DESCRIPTION}</Label>
           <TextArea
             id="description"
             required
@@ -74,7 +75,9 @@ const MeetUpForm = ({ onAddMeetUp }) => {
           />
         </FormItem>
         <ActionsContainer>
-          <StyledButton type="submit">Add Meetup</StyledButton>
+          <StyledButton type="submit">
+            {literals.newMeetup.ADD_MEETUP}
+          </StyledButton>
         </ActionsContainer>
       </Form>
     </Card>
@@ -83,6 +86,6 @@ const MeetUpForm = ({ onAddMeetUp }) => {
 
 MeetUpForm.propTypes = {
   onAddMeetUp: PropTypes.func,
-}
+};
 
 export default MeetUpForm;

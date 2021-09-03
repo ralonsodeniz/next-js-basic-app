@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import { getMongoClient } from '../../../database';
+import { getMongoClient } from '@Database/index';
 import { parseMeetups, parseMeetup } from './helpers';
 
 export const getMeetups = async () => {
