@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import MeetUpItem from '../MeetUpItem';
+import MeetUpItem from '@Components/MeetUpItem';
 import { List } from './MeetUpList.styled';
 
 const MeetUpList = ({ meetups }) => (

@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import { List, Item, Logo, Header } from './MainNavigation.styled';
+import { paths } from '@Enums/paths';
+import { literals } from '@Enums/literals';
 
 const MainNavigation = () => (
   <Header>
-    <Logo>React Meetups</Logo>
+    <Logo>{literals.navBar.LOGO}</Logo>
     <nav>
       <List>
         <Item>
-          <Link href="/">All Meetups</Link>
+          <Link href={paths.HOME}>{literals.navBar.HOME}</Link>
         </Item>
         <Item>
-          <Link href="/new-meetup">Add New Meetup</Link>
+          <Link href={paths.NEW_MEETUP}>{literals.navBar.NEW_MEETUP}</Link>
         </Item>
       </List>
     </nav>

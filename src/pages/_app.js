@@ -1,10 +1,10 @@
 import { ThemeProvider } from '@material-ui/core';
 import { SWRConfig } from 'swr';
 import GlobalStyle from '../styles/GlobalStyle';
-import Layout from '../components/Layout/Layout';
-import muiTheme from '../styles/muiTheme';
-import { swrConfig } from '../http';
-import RenderProvider from "../contexts/RenderContext";
+import Layout from '@Components/Layout';
+import muiTheme from '@Styles/muiTheme';
+import { swrConfig } from '@Http/index';
+import RenderProvider from "@Contexts/RenderContext";
 
 function MyApp({ Component, pageProps }) {
   return (

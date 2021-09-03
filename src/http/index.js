@@ -1,5 +1,4 @@
 import axios from 'axios';
-import useSWR from 'swr';
 
 const axiosConfig = {
   baseURL: '/api',
@@ -15,7 +14,5 @@ const axiosGet = async (url, options) => {
 export const swrConfig = {
   fetcher: axiosGet,
 };
-
-export const getJson = (key, options) => useSWR(key, options);
 
 export const postJson = instance.post;
