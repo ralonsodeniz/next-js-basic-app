@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Card from '@Components/ui/Card';
 import { literals } from '@Enums/literals';
+import { testIds } from './__test__/test-ids';
 import {
   ActionsContainer,
   StyledButton,
@@ -25,7 +26,7 @@ const MeetUpItem = ({ title, address, id, ...imageProps }) => {
         </ImageContainer>
         <Content>
           <Title>{title}</Title>
-          <address>{address}</address>
+          <address data-testid={testIds.ADDRESS}>{address}</address>
         </Content>
         <ActionsContainer>
           <StyledButton onClick={handleNavigate}>
@@ -38,7 +39,6 @@ const MeetUpItem = ({ title, address, id, ...imageProps }) => {
 };
 
 MeetUpItem.propTypes = {
-  image: PropTypes.string,
   title: PropTypes.string,
   address: PropTypes.string,
   id: PropTypes.string,
