@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { styled as muiStyled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { mediaQueries } from '@Styles/helpers/media-queries';
 
 export const Item = styled.li`
   margin: 1rem 0;
@@ -9,10 +10,12 @@ export const Item = styled.li`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  height: 20rem;
   overflow: hidden;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
+  ${mediaQueries.portrait} {
+    height: 20rem;
+  }
 `;
 
 export const StyledImage = styled(Image)`
