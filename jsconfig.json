@@ -6,9 +6,11 @@
       "@Contexts/*": ["contexts/*"],
       "@Database/*": ["database/*"],
       "@Enums/*": ["enums/*"],
+      "@Helpers/*": ["helpers/*"],
       "@Http/*": ["http/*"],
       "@Pages/*": ["pages/*"],
-      "@Styles/*": ["styles/*"]
+      "@Styles/*": ["styles/*"],
+      "@Utils/*": ["utils/*"]
     }
   }
 }
