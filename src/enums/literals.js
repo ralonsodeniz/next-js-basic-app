@@ -2,7 +2,7 @@ export const literals = {
   navBar: {
     LOGO: 'Meetups',
     HOME: 'All Meetups',
-    NEW_MEETUP: 'Add New Meetup',
+    NEW_MEETUP: 'Add new Meetup',
   },
   newMeetup: {
     TITLE: 'Meetup Title',
